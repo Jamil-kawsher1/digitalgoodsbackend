@@ -5,10 +5,11 @@ const mysql = require("mysql2/promise");
 module.exports = async (req, res) => {
   try {
     // Create a connection to the database
+    let fullhost = `${process.env.DB_HOST}:${process.env.DB_PORT}`;
     const connection = await mysql.createConnection({
-      host: process.env.DB_HOST,
+      host: fullhost,
       user: process.env.DB_USER,
-      port: process.env.DB_PORT,
+      //   port: process.env.DB_PORT,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
     });
