@@ -1,6 +1,6 @@
-//
 
-//new Auth Code
+
+// new Auth Code
 
 // routes/auth.js
 const express = require("express");
@@ -257,3 +257,6 @@ router.post("/resend-confirm", async (req, res) => {
 });
 
 module.exports = router;
+
+
+

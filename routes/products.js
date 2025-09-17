@@ -30,6 +30,7 @@
 
 const express = require("express");
 const Product = require("../models/Product");
+const DigitalKey = require("../models/DigitalKey");
 const { authRequired, requireRole } = require("../middleware/auth");
 
 const router = express.Router();
@@ -110,4 +111,48 @@ router.put("/:id", authRequired, requireRole("admin"), async (req, res) => {
   }
 });
 
+// Admin route: Add digital keys to product
+router.post(
+  "/:id/keys",
+  authRequired,
+  requireRole("admin"),
+  async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { keys = [] } = req.body;
+      const p = await Product.findByPk(id);
+      if (!p) return res.status(404).json({ error: "Product not found" });
+      const created = [];
+      for (const k of keys) {
+        const dk = await DigitalKey.create({
+          keyValue: k,
+          productId: p.id,
+          isAssigned: false,
+        });
+        created.push(dk);
+      }
+      res.json({ message: "Keys added", keys: created });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Server error" });
+    }
+  }
+);
+
+// Get keys for product (admin)
+router.get(
+  "/:id/keys",
+  authRequired,
+  requireRole("admin"),
+  async (req, res) => {
+    try {
+      const { id } = req.params;
+      const keys = await DigitalKey.findAll({ where: { productId: id } });
+      res.json(keys);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Server error" });
+    }
+  }
+);
 module.exports = router;
