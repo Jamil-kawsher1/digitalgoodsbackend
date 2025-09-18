@@ -13,10 +13,20 @@ const Order = sequelize.define("Order", {
   paymentSender: { type: DataTypes.STRING }
 }, { timestamps: true });
 
-User.hasMany(Order, { foreignKey: "userId" });
-Order.belongsTo(User, { foreignKey: "userId" });
+//old v .still works
+// User.hasMany(Order, { foreignKey: "userId" });
+// Order.belongsTo(User, { foreignKey: "userId" });
 
-Product.hasMany(Order, { foreignKey: "productId" });
-Order.belongsTo(Product, { foreignKey: "productId" });
+// Product.hasMany(Order, { foreignKey: "productId" });
+// Order.belongsTo(Product, { foreignKey: "productId" });
 
+
+
+//new version
+
+User.hasMany(Order, { foreignKey: "userId", as: "orders" });
+Order.belongsTo(User, { foreignKey: "userId", as: "user" });
+
+Product.hasMany(Order, { foreignKey: "productId", as: "orders" });
+Order.belongsTo(Product, { foreignKey: "productId", as: "product" });
 module.exports = Order;
