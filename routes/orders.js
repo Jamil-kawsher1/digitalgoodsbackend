@@ -1,8 +1,5 @@
 const express = require("express");
-const Order = require("../models/Order");
-const Product = require("../models/Product");
-const DigitalKey = require("../models/DigitalKey");
-const User = require("../models/User");
+const { Order, Product, DigitalKey, User, sequelize } = require("../models");
 const { authRequired, requireRole } = require("../middleware/auth");
 
 const router = express.Router();
@@ -28,15 +25,42 @@ router.post("/", authRequired, async (req, res) => {
 });
 
 // List orders (admin -> all, user -> own)
+// router.get("/", authRequired, async (req, res) => {
+//   try {
+//     if (req.user.role === "admin") {
+//       const all = await Order.findAll({ include: [Product] });
+//       return res.json(all);
+//     }
+//     const mine = await Order.findAll({
+//       where: { userId: req.user.id },
+//       include: [Product],
+//     });
+//     res.json(mine);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: "Server error" });
+//   }
+// });
+
+
 router.get("/", authRequired, async (req, res) => {
   try {
     if (req.user.role === "admin") {
-      const all = await Order.findAll({ include: [Product] });
+      const all = await Order.findAll({
+        include: [
+          { model: Product, as: "product" },
+          { model: User, as: "user" },
+          { model: DigitalKey, as: "keys" }
+        ]
+      });
       return res.json(all);
     }
     const mine = await Order.findAll({
       where: { userId: req.user.id },
-      include: [Product],
+      include: [
+        { model: Product, as: "product" },
+        { model: DigitalKey, as: "keys" }
+      ]
     });
     res.json(mine);
   } catch (err) {
@@ -44,7 +68,6 @@ router.get("/", authRequired, async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
 // Submit payment info for order
 router.post("/:id/payment", authRequired, async (req, res) => {
   try {

@@ -1,15 +1,21 @@
-const { Sequelize } = require("sequelize");
 require('dotenv').config();
+const { Sequelize } = require("sequelize");
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME || "digistore",
+  process.env.DB_NAME || "goods",
   process.env.DB_USER || "root",
-  process.env.DB_PASS || "",
+  process.env.DB_PASS || "admin",
   {
     host: process.env.DB_HOST || "localhost",
-    dialect: process.env.DB_DIALECT || "mysql", // or "postgres"
-    port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : undefined,
-    logging: false
+    port: process.env.DB_PORT || 3307,
+    dialect: 'mysql',
+    logging: false,
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
+    }
   }
 );
 

@@ -7,7 +7,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const User = require("../models/User");
+const { User, sequelize } = require("../models");
 const { SECRET } = require("../middleware/auth");
 const crypto = require("crypto");
 
@@ -16,7 +16,7 @@ const router = express.Router();
 // store reset tokens in-memory (for production: use DB table)
 const resetTokens = {};
 
-// optional email sending (confirmation + reset)
+// Generic email sending function
 async function sendEmail(toEmail, subject, text) {
   if (process.env.EMAIL_CONFIRMATION_ENABLED !== "true") {
     console.log(`[EMAIL DISABLED] Would send "${subject}" to ${toEmail}: ${text}`);
@@ -39,42 +39,16 @@ async function sendEmail(toEmail, subject, text) {
   const from = process.env.EMAIL_FROM || "no-reply@digistore.test";
   await transporter.sendMail({ from, to: toEmail, subject, text });
 }
+
+// Send confirmation email
 async function sendConfirmationEmail(toEmail, code) {
-  if (process.env.EMAIL_CONFIRMATION_ENABLED !== "true") {
-    console.log(
-      `[EMAIL DISABLED] Would send confirmation ${code} to ${toEmail}`
-    );
-    return;
-  }
-
-  // nodemailer is optional — install it if you enable email sending
-  const nodemailer = require("nodemailer");
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT) || 587,
-    secure: process.env.SMTP_SECURE === "true",
-    auth: process.env.SMTP_USER
-      ? {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        }
-      : undefined,
-  });
-
-  const from = process.env.EMAIL_FROM || "no-reply@digistore.test";
   const subject = "Confirm your DigiStore email";
   const text = `Your confirmation code: ${code}\n\nIf you didn't request this, ignore.`;
-
-  await transporter.sendMail({ from, to: toEmail, subject, text });
+  await sendEmail(toEmail, subject, text);
 }
 /** simple email regex */
 function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-/** generate 6-digit code */
-function generateCode() {
-  return String(Math.floor(100000 + Math.random() * 900000));
 }
 
 /** generate 6-digit code */

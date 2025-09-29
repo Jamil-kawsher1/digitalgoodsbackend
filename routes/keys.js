@@ -1,14 +1,18 @@
 const express = require("express");
-
-// const { DigitalKey } = require('../models');
 const { authRequired, requireRole } = require("../middleware/auth");
-const DigitalKey = require("../models/DigitalKey");
+const { DigitalKey, Product, Order, sequelize } = require("../models");
 const router = express.Router();
 
 // List all keys (admin)
 router.get("/", authRequired, requireRole("admin"), async (req, res) => {
   try {
-    const keys = await DigitalKey.findAll({ order: [["createdAt", "DESC"]] });
+    const keys = await DigitalKey.findAll({
+      include: [
+        { model: Product, as: "product" },
+        { model: Order, as: "order" }
+      ],
+      order: [["createdAt", "DESC"]]
+    });
     res.json(keys);
   } catch (err) {
     console.error(err);

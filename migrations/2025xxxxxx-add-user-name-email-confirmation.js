@@ -1,35 +1,34 @@
-// migrations/2025xxxxxxxxxx-add-user-name-email-confirmation.js
-"use strict";
+'use strict';
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    // add columns if they don't exist
-    await queryInterface.addColumn("Users", "name", {
+    // Add User model columns for email confirmation
+    await queryInterface.addColumn('Users', 'name', {
       type: Sequelize.STRING,
-      allowNull: true,
+      allowNull: true
     });
 
-    await queryInterface.addColumn("Users", "emailConfirmed", {
+    await queryInterface.addColumn('Users', 'emailConfirmed', {
       type: Sequelize.BOOLEAN,
       allowNull: false,
-      defaultValue: false,
+      defaultValue: false
     });
 
-    await queryInterface.addColumn("Users", "confirmationCode", {
+    await queryInterface.addColumn('Users', 'confirmationCode', {
       type: Sequelize.STRING,
-      allowNull: true,
+      allowNull: true
     });
 
-    await queryInterface.addColumn("Users", "confirmationCodeExpires", {
+    await queryInterface.addColumn('Users', 'confirmationCodeExpires', {
       type: Sequelize.DATE,
-      allowNull: true,
+      allowNull: true
     });
   },
 
-  async down(queryInterface) {
-    await queryInterface.removeColumn("Users", "confirmationCodeExpires");
-    await queryInterface.removeColumn("Users", "confirmationCode");
-    await queryInterface.removeColumn("Users", "emailConfirmed");
-    await queryInterface.removeColumn("Users", "name");
-  },
+  async down(queryInterface, Sequelize) {
+    await queryInterface.removeColumn('Users', 'confirmationCodeExpires');
+    await queryInterface.removeColumn('Users', 'confirmationCode');
+    await queryInterface.removeColumn('Users', 'emailConfirmed');
+    await queryInterface.removeColumn('Users', 'name');
+  }
 };

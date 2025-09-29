@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "migrate": "node migrate.js",
+    "seed": "node seeders/index.js",
+    "setup": "npm run migrate && npm run seed",
+    "setup:dev": "npm run migrate && npm run seed && npm run dev"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
