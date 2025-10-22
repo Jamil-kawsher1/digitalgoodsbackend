@@ -15,6 +15,7 @@ const productRoutes = require("./routes/products");
 const orderRoutes = require("./routes/orders");
 const userRoutes = require("./routes/users");
 const keyRoutes = require("./routes/keys");
+const backupRoutes = require("./backup/routes/backupRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -33,9 +34,10 @@ app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
 app.use("/users", userRoutes);
 app.use("/keys", keyRoutes);
+app.use("/backup", backupRoutes);
 
 // Sync database and start server
-sequelize.sync({ alter: true })
+sequelize.sync({ force: false, alter: false })
   .then(async () => {
     console.log("Database synced");
     const bcrypt = require("bcrypt");

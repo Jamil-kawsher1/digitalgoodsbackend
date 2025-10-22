@@ -1,0 +1,58 @@
+[
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 30,
+    "backupCreated": true,
+    "timestamp": "2025-10-17T15:27:39.950Z"
+  },
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 0,
+    "backupCreated": true,
+    "timestamp": "2025-10-17T15:38:04.539Z"
+  },
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 0,
+    "backupCreated": true,
+    "timestamp": "2025-10-17T15:40:07.714Z"
+  },
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 2,
+    "backupCreated": true,
+    "timestamp": "2025-10-17T15:51:34.243Z"
+  },
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 3,
+    "backupCreated": true,
+    "timestamp": "2025-10-17T16:14:49.577Z"
+  },
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 1,
+    "backupCreated": true,
+    "timestamp": "2025-10-17T16:28:49.017Z"
+  },
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 1,
+    "backupCreated": true,
+    "timestamp": "2025-10-17T16:30:55.436Z"
+  },
+  {
+    "type": "clear_table",
+    "table": "Orders",
+    "recordsDeleted": 6,
+    "backupCreated": true,
+    "timestamp": "2025-10-18T11:33:34.051Z"
+  }
+]

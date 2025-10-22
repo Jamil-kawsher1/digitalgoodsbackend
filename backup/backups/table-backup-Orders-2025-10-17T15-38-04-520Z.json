@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "id": "2025-10-17T15-38-04-520Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "createdAt": "2025-10-17T15:38:04.521Z",
+    "database": "goods",
+    "version": "1.0"
+  },
+  "data": {
+    "Orders": []
+  }
+}

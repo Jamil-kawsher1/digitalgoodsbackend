@@ -73,21 +73,49 @@ router.post("/:id/payment", authRequired, async (req, res) => {
   try {
     const { id } = req.params;
     const { method, trxId, sender } = req.body;
-    const order = await Order.findByPk(id);
-    if (!order) return res.status(404).json({ error: "Order not found" });
-    if (order.userId !== req.user.id)
+    
+    console.log("Payment submission received:", { id, method, trxId, sender });
+    
+    const order = await Order.findByPk(id, {
+      include: [
+        { model: Product, as: "product" },
+        { model: User, as: "user" },
+        { model: DigitalKey, as: "keys" }
+      ]
+    });
+    
+    if (!order) {
+      console.log("Order not found:", id);
+      return res.status(404).json({ error: "Order not found" });
+    }
+    if (order.userId !== req.user.id) {
+      console.log("Order access denied - user mismatch:", order.userId, req.user.id);
       return res.status(403).json({ error: "Not yours" });
+    }
 
+    console.log("Updating order payment info...");
+    
     order.paymentMethod = method;
     order.transactionId = trxId;
     order.paymentSender = sender;
     order.status = "awaiting_confirmation";
     await order.save();
 
-    res.json(order);
+    console.log("Order updated successfully:", order.toJSON());
+
+    // Return the updated order with all relationships
+    const updatedOrder = await Order.findByPk(id, {
+      include: [
+        { model: Product, as: "product" },
+        { model: User, as: "user" },
+        { model: DigitalKey, as: "keys" }
+      ]
+    });
+
+    res.json(updatedOrder);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Server error" });
+    console.error("Error in payment submission:", err);
+    res.status(500).json({ error: "Server error: " + err.message });
   }
 });
 
@@ -105,9 +133,18 @@ router.post(
       order.status = "paid";
       await order.save();
 
+      // Return the updated order with all relationships for immediate UI update
+      const updatedOrder = await Order.findByPk(id, {
+        include: [
+          { model: Product, as: "product" },
+          { model: User, as: "user" },
+          { model: DigitalKey, as: "keys" }
+        ]
+      });
+
       res.json({
         message: "Payment confirmed. Keys/details will be assigned soon.",
-        order,
+        order: updatedOrder,
       });
     } catch (err) {
       console.error(err);
@@ -140,7 +177,19 @@ router.post(
         });
       }
 
-      res.json(order);
+      // Return the updated order with all relationships for immediate UI update
+      const updatedOrder = await Order.findByPk(id, {
+        include: [
+          { model: Product, as: "product" },
+          { model: User, as: "user" },
+          { model: DigitalKey, as: "keys" }
+        ]
+      });
+
+      res.json({
+        message: "Payment confirmed and keys assigned successfully!",
+        order: updatedOrder,
+      });
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: "Server error" });
