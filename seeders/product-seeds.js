@@ -6,7 +6,7 @@ module.exports = [
     instructions: '1. Download the installer from your account dashboard\n2. Run the setup file\n3. Enter the provided license key when prompted\n4. Complete the installation\n5. Restart your computer',
     price: 299.99,
     quantity: 50,
-    logo: 'https://example.com/logos/office2024.png',
+    logo: '📊',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -18,7 +18,7 @@ module.exports = [
     instructions: '1. Install Adobe Creative Cloud\n2. Download Photoshop from Creative Cloud\n3. Launch Photoshop and sign in\n4. Enter the license key in the activation window\n5. Start creating amazing artwork',
     price: 239.88,
     quantity: 25,
-    logo: 'https://example.com/logos/photoshop2024.png',
+    logo: '🎨',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -30,7 +30,7 @@ module.exports = [
     instructions: '1. Create a bootable USB drive with the ISO file\n2. Boot from the USB drive\n3. Follow the installation wizard\n4. Enter the product key when prompted\n5. Complete setup and install drivers',
     price: 199.99,
     quantity: 100,
-    logo: 'https://example.com/logos/windows11.png',
+    logo: '🪟',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -42,7 +42,7 @@ module.exports = [
     instructions: '1. Download Norton from the official website\n2. Run the installer\n3. Create your Norton account\n4. Enter the license key\n5. Run a full system scan',
     price: 149.99,
     quantity: 75,
-    logo: 'https://example.com/logos/norton360.png',
+    logo: '🛡️',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -54,7 +54,7 @@ module.exports = [
     instructions: '1. Download from the Mac App Store\n2. Install the application\n3. Launch Final Cut Pro X\n4. Enter the redemption code\n5. Start editing your videos',
     price: 299.99,
     quantity: 30,
-    logo: 'https://example.com/logos/finalcut.png',
+    logo: '🎬',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -63,10 +63,10 @@ module.exports = [
     id: 6,
     name: 'AutoCAD 2024',
     description: 'Professional CAD software for architects, engineers, and construction professionals.',
-    instructions: '1. Download AutoCAD from Autodesk website\n2. Install the software\n3. Launch AutoCAD\n4. Enter the serial number and product key\n5. Activate your license',
+    instructions: '1. Download AutoCAD from the Autodesk website\n2. Install the software\n3. Launch AutoCAD\n4. Enter the serial number and product key\n5. Activate your license',
     price: 1775.00,
     quantity: 15,
-    logo: 'https://example.com/logos/autocad2024.png',
+    logo: '🏗️',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -78,7 +78,7 @@ module.exports = [
     instructions: '1. Download VMware Workstation Pro\n2. Install the software\n3. Enter the license key during installation\n4. Complete the setup\n5. Start creating virtual machines',
     price: 199.99,
     quantity: 40,
-    logo: 'https://example.com/logos/vmware.png',
+    logo: '💻',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -87,10 +87,10 @@ module.exports = [
     id: 8,
     name: 'Camtasia 2024',
     description: 'Screen recording and video editing software perfect for creating tutorials, presentations, and marketing videos.',
-    instructions: '1. Download Camtasia from TechSmith website\n2. Install the software\n3. Launch Camtasia\n4. Enter the software key\n5. Start recording and editing',
+    instructions: '1. Download Camtasia from the TechSmith website\n2. Install the software\n3. Launch Camtasia\n4. Enter the software key\n5. Start recording and editing',
     price: 249.99,
     quantity: 35,
-    logo: 'https://example.com/logos/camtasia.png',
+    logo: '🎥',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -102,7 +102,7 @@ module.exports = [
     instructions: '1. Download from the Mac App Store\n2. Install the application\n3. Launch Logic Pro X\n4. Enter the redemption code\n5. Start creating music',
     price: 199.99,
     quantity: 20,
-    logo: 'https://example.com/logos/logicpro.png',
+    logo: '🎵',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')
@@ -111,10 +111,10 @@ module.exports = [
     id: 10,
     name: 'QuickBooks Desktop Pro',
     description: 'Accounting software for small businesses to manage income, expenses, and generate financial reports.',
-    instructions: '1. Download QuickBooks from Intuit website\n2. Install the software\n3. Set up your company file\n4. Enter the license key\n5. Start managing your finances',
+    instructions: '1. Download QuickBooks from the Intuit website\n2. Install the software\n3. Set up your company file\n4. Enter the license key\n5. Start managing your finances',
     price: 549.99,
     quantity: 45,
-    logo: 'https://example.com/logos/quickbooks.png',
+    logo: '💰',
     isActive: true,
     createdAt: new Date('2024-01-01'),
     updatedAt: new Date('2024-01-01')

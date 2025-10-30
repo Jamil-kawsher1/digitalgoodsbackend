@@ -134,5 +134,21 @@
     "compressed": false,
     "createdAt": "2025-10-18T11:33:34.010Z",
     "database": "goods"
+  },
+  {
+    "id": "2025-10-29T15-25-05-042Z",
+    "type": "full",
+    "filename": "full-backup-2025-10-29T15-25-05-042Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\full-backup-2025-10-29T15-25-05-042Z.json",
+    "size": "24.81",
+    "compressed": false,
+    "createdAt": "2025-10-29T15:25:05.056Z",
+    "database": "goods",
+    "tables": [
+      "Users",
+      "Products",
+      "Orders",
+      "DigitalKeys"
+    ]
   }
 ]

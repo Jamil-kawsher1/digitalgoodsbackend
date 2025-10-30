@@ -1,0 +1,762 @@
+{
+  "metadata": {
+    "id": "2025-10-29T15-25-05-042Z",
+    "type": "full",
+    "createdAt": "2025-10-29T15:25:05.042Z",
+    "database": "goods",
+    "version": "1.0"
+  },
+  "data": {
+    "Users": [
+      {
+        "id": 1,
+        "name": "Admin User",
+        "email": "admin@digistore.com",
+        "passwordHash": "$2b$10$WLTbm0Oxc7Ok66VXKDOYseim1KbgxRt9PuY7NFdIdEMhefFfmcZMq",
+        "role": "admin",
+        "emailConfirmed": 1,
+        "confirmationCode": null,
+        "confirmationCodeExpires": null,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2024-01-01T00:00:00.000Z"
+      },
+      {
+        "id": 2,
+        "name": "John Doe",
+        "email": "john@example.com",
+        "passwordHash": "$2b$10$L13A0HVVamgCvn2Tgixv8ebQPea91AAbdBb2Ss.b2a2Cl0EpIrKRS",
+        "role": "customer",
+        "emailConfirmed": 1,
+        "confirmationCode": null,
+        "confirmationCodeExpires": null,
+        "createdAt": "2024-01-02T00:00:00.000Z",
+        "updatedAt": "2024-01-02T00:00:00.000Z"
+      },
+      {
+        "id": 3,
+        "name": "Jane Smith",
+        "email": "jane@example.com",
+        "passwordHash": "$2b$10$UNwDIiuxvaFvwLC3PUui/.86Kh2egQHJnm.Seew6hwAsRcUwJybx6",
+        "role": "customer",
+        "emailConfirmed": 1,
+        "confirmationCode": null,
+        "confirmationCodeExpires": null,
+        "createdAt": "2024-01-03T00:00:00.000Z",
+        "updatedAt": "2024-01-03T00:00:00.000Z"
+      },
+      {
+        "id": 4,
+        "name": "Bob Johnson",
+        "email": "bob@example.com",
+        "passwordHash": "$2b$10$ncgGZ5b4trJTvaYPig8cduz1StibdDWZfb9XNn5ZbddWg6PjuFMfG",
+        "role": "customer",
+        "emailConfirmed": 1,
+        "confirmationCode": null,
+        "confirmationCodeExpires": null,
+        "createdAt": "2024-01-04T00:00:00.000Z",
+        "updatedAt": "2024-01-04T00:00:00.000Z"
+      },
+      {
+        "id": 5,
+        "name": "Alice Williams",
+        "email": "alice@example.com",
+        "passwordHash": "$2b$10$3WQE4V3teTkCiEX3J/bOX..ZQR.nv4gWBasZyZLZIj22biafw7zQS",
+        "role": "customer",
+        "emailConfirmed": 0,
+        "confirmationCode": "123456",
+        "confirmationCodeExpires": "2025-10-29T15:25:06.000Z",
+        "createdAt": "2024-01-05T00:00:00.000Z",
+        "updatedAt": "2024-01-05T00:00:00.000Z"
+      },
+      {
+        "id": 6,
+        "name": null,
+        "email": "admin@site.test",
+        "passwordHash": "$2b$10$BWLXBlIgJJyWiKbnsA5Ro.YS6.zxvckjcOmnPJW88AswK8aB7G8/O",
+        "role": "admin",
+        "emailConfirmed": 1,
+        "confirmationCode": null,
+        "confirmationCodeExpires": null,
+        "createdAt": "2025-10-12T15:22:40.000Z",
+        "updatedAt": "2025-10-12T15:22:40.000Z"
+      },
+      {
+        "id": 7,
+        "name": "Jamil Kawsher ",
+        "email": "badhon0777@gmail.com",
+        "passwordHash": "$2b$10$K8JFB1De74krUgRR3YWguubD91BBEmnsx/Gb.q.0AZLRljk6rsO8i",
+        "role": "customer",
+        "emailConfirmed": 0,
+        "confirmationCode": "237900",
+        "confirmationCodeExpires": "2025-10-13T15:41:37.000Z",
+        "createdAt": "2025-10-12T15:41:37.000Z",
+        "updatedAt": "2025-10-12T15:41:37.000Z"
+      },
+      {
+        "id": 8,
+        "name": "Jamil Kawsher ",
+        "email": "jamilkawsher@gmail.com",
+        "passwordHash": "$2b$10$3aeFPnrR526c8jHSPkjOS.vupQ2eGg7Z.lXOfEOdNmxToKR4lxVzO",
+        "role": "customer",
+        "emailConfirmed": 0,
+        "confirmationCode": "357904",
+        "confirmationCodeExpires": "2025-10-16T15:02:44.000Z",
+        "createdAt": "2025-10-15T15:02:44.000Z",
+        "updatedAt": "2025-10-15T15:02:44.000Z"
+      },
+      {
+        "id": 9,
+        "name": "Jon Doe",
+        "email": "armando@gmail.com",
+        "passwordHash": "$2b$10$DSzp327fQW5ZEYotmDKy.eJzS.TLYPQ0OPGBeSdgd.JaFmdfVp/w2",
+        "role": "customer",
+        "emailConfirmed": 0,
+        "confirmationCode": "309917",
+        "confirmationCodeExpires": "2025-10-16T15:13:58.000Z",
+        "createdAt": "2025-10-15T15:13:58.000Z",
+        "updatedAt": "2025-10-15T15:13:58.000Z"
+      }
+    ],
+    "Products": [
+      {
+        "id": 1,
+        "name": "Microsoft Office 2024 Professional",
+        "description": "Complete productivity suite with Word, Excel, PowerPoint, Outlook, and more. Perfect for business and personal use.",
+        "instructions": "1. Download the installer from your account dashboard\n2. Run the setup file\n3. Enter the provided license key when prompted\n4. Complete the installation\n5. Restart your computer",
+        "price": "299.99",
+        "quantity": 50,
+        "logo": "📴",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:11:42.000Z"
+      },
+      {
+        "id": 2,
+        "name": "Adobe Photoshop CC 2024",
+        "description": "Professional photo editing software with advanced features for graphic designers, photographers, and digital artists.",
+        "instructions": "1. Install Adobe Creative Cloud\n2. Download Photoshop from Creative Cloud\n3. Launch Photoshop and sign in\n4. Enter the license key in the activation window\n5. Start creating amazing artwork",
+        "price": "239.88",
+        "quantity": 25,
+        "logo": "📸",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:12:07.000Z"
+      },
+      {
+        "id": 3,
+        "name": "Windows 11 Pro",
+        "description": "Latest operating system from Microsoft with enhanced security, performance, and productivity features.",
+        "instructions": "1. Create a bootable USB drive with the ISO file\n2. Boot from the USB drive\n3. Follow the installation wizard\n4. Enter the product key when prompted\n5. Complete setup and install drivers",
+        "price": "199.99",
+        "quantity": 100,
+        "logo": "🪟",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:12:23.000Z"
+      },
+      {
+        "id": 4,
+        "name": "Norton 360 Premium",
+        "description": "Comprehensive security suite with antivirus, VPN, cloud backup, and identity protection for up to 10 devices.",
+        "instructions": "1. Download Norton from the official website\n2. Run the installer\n3. Create your Norton account\n4. Enter the license key\n5. Run a full system scan",
+        "price": "149.99",
+        "quantity": 73,
+        "logo": "🔄️",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T17:29:08.000Z"
+      },
+      {
+        "id": 5,
+        "name": "Final Cut Pro X",
+        "description": "Professional video editing software for Mac users with powerful features and intuitive interface.",
+        "instructions": "1. Download from the Mac App Store\n2. Install the application\n3. Launch Final Cut Pro X\n4. Enter the redemption code\n5. Start editing your videos",
+        "price": "299.99",
+        "quantity": 30,
+        "logo": "🎥",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:13:07.000Z"
+      },
+      {
+        "id": 6,
+        "name": "AutoCAD 2024",
+        "description": "Professional CAD software for architects, engineers, and construction professionals.",
+        "instructions": "1. Download AutoCAD from Autodesk website\n2. Install the software\n3. Launch AutoCAD\n4. Enter the serial number and product key\n5. Activate your license",
+        "price": "1775.00",
+        "quantity": 14,
+        "logo": "🅰️",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T17:13:24.000Z"
+      },
+      {
+        "id": 7,
+        "name": "VMware Workstation Pro",
+        "description": "Leading virtualization software for running multiple operating systems on a single PC.",
+        "instructions": "1. Download VMware Workstation Pro\n2. Install the software\n3. Enter the license key during installation\n4. Complete the setup\n5. Start creating virtual machines",
+        "price": "199.99",
+        "quantity": 40,
+        "logo": "🪖",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:14:24.000Z"
+      },
+      {
+        "id": 8,
+        "name": "Camtasia 2024",
+        "description": "Screen recording and video editing software perfect for creating tutorials, presentations, and marketing videos.",
+        "instructions": "1. Download Camtasia from TechSmith website\n2. Install the software\n3. Launch Camtasia\n4. Enter the software key\n5. Start recording and editing",
+        "price": "249.99",
+        "quantity": 35,
+        "logo": "🎦",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:14:40.000Z"
+      },
+      {
+        "id": 9,
+        "name": "Logic Pro X",
+        "description": "Professional music production software for Mac with comprehensive tools for songwriting, beat making, editing, and mixing.",
+        "instructions": "1. Download from the Mac App Store\n2. Install the application\n3. Launch Logic Pro X\n4. Enter the redemption code\n5. Start creating music",
+        "price": "199.99",
+        "quantity": 20,
+        "logo": "🦿",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:15:02.000Z"
+      },
+      {
+        "id": 10,
+        "name": "QuickBooks Desktop Pro",
+        "description": "Accounting software for small businesses to manage income, expenses, and generate financial reports.",
+        "instructions": "1. Download QuickBooks from Intuit website\n2. Install the software\n3. Set up your company file\n4. Enter the license key\n5. Start managing your finances",
+        "price": "549.99",
+        "quantity": 45,
+        "logo": "📚",
+        "isActive": 1,
+        "createdAt": "2024-01-01T00:00:00.000Z",
+        "updatedAt": "2025-10-28T16:15:19.000Z"
+      }
+    ],
+    "Orders": [
+      {
+        "id": 44,
+        "userId": 8,
+        "productId": 2,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "01682953579bal",
+        "createdAt": "2025-10-18T11:34:44.000Z",
+        "updatedAt": "2025-10-18T11:35:30.000Z"
+      },
+      {
+        "id": 45,
+        "userId": 8,
+        "productId": 4,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdgNorton",
+        "paymentSender": "dfwefd",
+        "createdAt": "2025-10-18T11:48:04.000Z",
+        "updatedAt": "2025-10-18T11:50:51.000Z"
+      },
+      {
+        "id": 46,
+        "userId": 7,
+        "productId": 1,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "dsdsgdsdfgs",
+        "createdAt": "2025-10-18T12:32:34.000Z",
+        "updatedAt": "2025-10-18T12:32:34.000Z"
+      },
+      {
+        "id": 47,
+        "userId": 7,
+        "productId": 6,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdg",
+        "paymentSender": "01682953579bal",
+        "createdAt": "2025-10-18T12:50:43.000Z",
+        "updatedAt": "2025-10-18T12:50:43.000Z"
+      },
+      {
+        "id": 48,
+        "userId": 7,
+        "productId": 5,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdg141025",
+        "paymentSender": "dsdsgdsdfgs",
+        "createdAt": "2025-10-18T13:05:23.000Z",
+        "updatedAt": "2025-10-18T13:05:23.000Z"
+      },
+      {
+        "id": 49,
+        "userId": 7,
+        "productId": 4,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025norton",
+        "paymentSender": "dfwefd",
+        "createdAt": "2025-10-18T13:33:00.000Z",
+        "updatedAt": "2025-10-18T13:33:00.000Z"
+      },
+      {
+        "id": 50,
+        "userId": 8,
+        "productId": 5,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "Final Cut Pro X",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T02:43:13.000Z",
+        "updatedAt": "2025-10-19T02:43:13.000Z"
+      },
+      {
+        "id": 51,
+        "userId": 8,
+        "productId": 3,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdgWindows",
+        "paymentSender": "01682953579!9/10/25",
+        "createdAt": "2025-10-19T03:10:08.000Z",
+        "updatedAt": "2025-10-19T03:10:08.000Z"
+      },
+      {
+        "id": 52,
+        "userId": 8,
+        "productId": 4,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "norton19/10/25",
+        "paymentSender": "8801682953579",
+        "createdAt": "2025-10-19T03:15:21.000Z",
+        "updatedAt": "2025-10-19T03:15:21.000Z"
+      },
+      {
+        "id": 53,
+        "userId": 8,
+        "productId": 1,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday161025",
+        "paymentSender": "ddfgfdgd",
+        "createdAt": "2025-10-19T03:22:31.000Z",
+        "updatedAt": "2025-10-19T03:22:31.000Z"
+      },
+      {
+        "id": 54,
+        "userId": 8,
+        "productId": 6,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T03:44:32.000Z",
+        "updatedAt": "2025-10-19T03:44:32.000Z"
+      },
+      {
+        "id": 55,
+        "userId": 8,
+        "productId": 2,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdg",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T03:50:43.000Z",
+        "updatedAt": "2025-10-19T03:50:43.000Z"
+      },
+      {
+        "id": 56,
+        "userId": 7,
+        "productId": 1,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "office905",
+        "paymentSender": "8801682953579",
+        "createdAt": "2025-10-19T04:00:45.000Z",
+        "updatedAt": "2025-10-19T04:00:45.000Z"
+      },
+      {
+        "id": 57,
+        "userId": 7,
+        "productId": 2,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday161025",
+        "paymentSender": "8801682953579",
+        "createdAt": "2025-10-19T04:03:22.000Z",
+        "updatedAt": "2025-10-19T04:03:22.000Z"
+      },
+      {
+        "id": 58,
+        "userId": 7,
+        "productId": 1,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdgNorton",
+        "paymentSender": "8801682953579",
+        "createdAt": "2025-10-19T04:18:17.000Z",
+        "updatedAt": "2025-10-19T04:18:17.000Z"
+      },
+      {
+        "id": 59,
+        "userId": 7,
+        "productId": 2,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "dfwefd",
+        "createdAt": "2025-10-19T04:24:27.000Z",
+        "updatedAt": "2025-10-19T04:24:27.000Z"
+      },
+      {
+        "id": 60,
+        "userId": 7,
+        "productId": 4,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T04:38:25.000Z",
+        "updatedAt": "2025-10-19T04:38:25.000Z"
+      },
+      {
+        "id": 61,
+        "userId": 7,
+        "productId": 5,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdgNorton",
+        "paymentSender": "01682953579bal",
+        "createdAt": "2025-10-19T04:38:49.000Z",
+        "updatedAt": "2025-10-19T04:38:49.000Z"
+      },
+      {
+        "id": 62,
+        "userId": 8,
+        "productId": 1,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdgNorton",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T04:40:54.000Z",
+        "updatedAt": "2025-10-19T04:40:54.000Z"
+      },
+      {
+        "id": 63,
+        "userId": 7,
+        "productId": 6,
+        "status": "awaiting_confirmation",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdg",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T04:51:48.000Z",
+        "updatedAt": "2025-10-19T04:51:48.000Z"
+      },
+      {
+        "id": 64,
+        "userId": 8,
+        "productId": 2,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdgWindows",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T04:57:50.000Z",
+        "updatedAt": "2025-10-28T17:30:29.000Z"
+      },
+      {
+        "id": 65,
+        "userId": 8,
+        "productId": 1,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-19T06:11:23.000Z",
+        "updatedAt": "2025-10-28T17:30:16.000Z"
+      },
+      {
+        "id": 66,
+        "userId": 7,
+        "productId": 2,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "ddfgfdgWindows",
+        "paymentSender": "8801682953579",
+        "createdAt": "2025-10-19T06:38:19.000Z",
+        "updatedAt": "2025-10-28T15:59:28.000Z"
+      },
+      {
+        "id": 67,
+        "userId": 7,
+        "productId": 3,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "ddfgfdgd",
+        "createdAt": "2025-10-19T07:00:05.000Z",
+        "updatedAt": "2025-10-28T15:36:23.000Z"
+      },
+      {
+        "id": 68,
+        "userId": 8,
+        "productId": 2,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "PhotoshopTday141025",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-22T17:06:43.000Z",
+        "updatedAt": "2025-10-28T15:36:10.000Z"
+      },
+      {
+        "id": 69,
+        "userId": 7,
+        "productId": 4,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "Nortontest281025",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-28T16:58:06.000Z",
+        "updatedAt": "2025-10-28T16:58:41.000Z"
+      },
+      {
+        "id": 70,
+        "userId": 8,
+        "productId": 6,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "AutoCadTday28/10/25",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-28T17:13:24.000Z",
+        "updatedAt": "2025-10-28T17:13:53.000Z"
+      },
+      {
+        "id": 71,
+        "userId": 8,
+        "productId": 4,
+        "status": "paid",
+        "paymentMethod": "bkash",
+        "transactionId": "nortonTday28",
+        "paymentSender": "01682953579",
+        "createdAt": "2025-10-28T17:29:08.000Z",
+        "updatedAt": "2025-10-28T17:30:55.000Z"
+      }
+    ],
+    "DigitalKeys": [
+      {
+        "id": 1,
+        "keyValue": "XXXXX-XXXXX-XXXXX-XXXXX-XXXXX",
+        "isAssigned": 1,
+        "createdAt": "2024-01-10T00:00:00.000Z",
+        "updatedAt": "2024-01-10T00:00:00.000Z",
+        "productId": 1,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 2,
+        "keyValue": "YYYYY-YYYYY-YYYYY-YYYYY-YYYYY",
+        "isAssigned": 0,
+        "createdAt": "2024-01-10T00:00:00.000Z",
+        "updatedAt": "2024-01-10T00:00:00.000Z",
+        "productId": 1,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 3,
+        "keyValue": "ZZZZZ-ZZZZZ-ZZZZZ-ZZZZZ-ZZZZZ",
+        "isAssigned": 0,
+        "createdAt": "2024-01-10T00:00:00.000Z",
+        "updatedAt": "2024-01-10T00:00:00.000Z",
+        "productId": 1,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 4,
+        "keyValue": "PHOTOSHOP-2024-KEY-0001",
+        "isAssigned": 1,
+        "createdAt": "2024-01-11T00:00:00.000Z",
+        "updatedAt": "2024-01-11T00:00:00.000Z",
+        "productId": 2,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 5,
+        "keyValue": "PHOTOSHOP-2024-KEY-0002",
+        "isAssigned": 0,
+        "createdAt": "2024-01-11T00:00:00.000Z",
+        "updatedAt": "2024-01-11T00:00:00.000Z",
+        "productId": 2,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 6,
+        "keyValue": "WIN11-PRO-ACTIVATION-001",
+        "isAssigned": 1,
+        "createdAt": "2024-01-12T00:00:00.000Z",
+        "updatedAt": "2024-01-12T00:00:00.000Z",
+        "productId": 3,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 7,
+        "keyValue": "WIN11-PRO-ACTIVATION-002",
+        "isAssigned": 0,
+        "createdAt": "2024-01-12T00:00:00.000Z",
+        "updatedAt": "2024-01-12T00:00:00.000Z",
+        "productId": 3,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 8,
+        "keyValue": "WIN11-PRO-ACTIVATION-003",
+        "isAssigned": 0,
+        "createdAt": "2024-01-12T00:00:00.000Z",
+        "updatedAt": "2024-01-12T00:00:00.000Z",
+        "productId": 3,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 9,
+        "keyValue": "NORTON-360-PREMIUM-001",
+        "isAssigned": 1,
+        "createdAt": "2024-01-13T00:00:00.000Z",
+        "updatedAt": "2024-01-13T00:00:00.000Z",
+        "productId": 4,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 10,
+        "keyValue": "NORTON-360-PREMIUM-002",
+        "isAssigned": 0,
+        "createdAt": "2024-01-13T00:00:00.000Z",
+        "updatedAt": "2024-01-13T00:00:00.000Z",
+        "productId": 4,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 11,
+        "keyValue": "FINAL-CUT-PRO-X-001",
+        "isAssigned": 0,
+        "createdAt": "2024-01-14T00:00:00.000Z",
+        "updatedAt": "2024-01-14T00:00:00.000Z",
+        "productId": 5,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 12,
+        "keyValue": "AUTOCAD-2024-PRO-001",
+        "isAssigned": 1,
+        "createdAt": "2024-01-15T00:00:00.000Z",
+        "updatedAt": "2024-01-15T00:00:00.000Z",
+        "productId": 6,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 13,
+        "keyValue": "AUTOCAD-2024-PRO-002",
+        "isAssigned": 0,
+        "createdAt": "2024-01-15T00:00:00.000Z",
+        "updatedAt": "2024-01-15T00:00:00.000Z",
+        "productId": 6,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 14,
+        "keyValue": "VMWARE-WS-PRO-001",
+        "isAssigned": 0,
+        "createdAt": "2024-01-16T00:00:00.000Z",
+        "updatedAt": "2024-01-16T00:00:00.000Z",
+        "productId": 7,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 15,
+        "keyValue": "CAMTASIA-2024-KEY-001",
+        "isAssigned": 1,
+        "createdAt": "2024-01-17T00:00:00.000Z",
+        "updatedAt": "2024-01-17T00:00:00.000Z",
+        "productId": 8,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 16,
+        "keyValue": "CAMTASIA-2024-KEY-002",
+        "isAssigned": 0,
+        "createdAt": "2024-01-17T00:00:00.000Z",
+        "updatedAt": "2024-01-17T00:00:00.000Z",
+        "productId": 8,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 17,
+        "keyValue": "LOGIC-PRO-X-001",
+        "isAssigned": 0,
+        "createdAt": "2024-01-18T00:00:00.000Z",
+        "updatedAt": "2024-01-18T00:00:00.000Z",
+        "productId": 9,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 18,
+        "keyValue": "QUICKBOOKS-PRO-2024-001",
+        "isAssigned": 0,
+        "createdAt": "2024-01-19T00:00:00.000Z",
+        "updatedAt": "2024-01-19T00:00:00.000Z",
+        "productId": 10,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 19,
+        "keyValue": "QUICKBOOKS-PRO-2024-002",
+        "isAssigned": 0,
+        "createdAt": "2024-01-19T00:00:00.000Z",
+        "updatedAt": "2024-01-19T00:00:00.000Z",
+        "productId": 10,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 20,
+        "keyValue": "QUICKBOOKS-PRO-2024-003",
+        "isAssigned": 0,
+        "createdAt": "2024-01-19T00:00:00.000Z",
+        "updatedAt": "2024-01-19T00:00:00.000Z",
+        "productId": 10,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 21,
+        "keyValue": "PHOTOSHOP-2024-KEY-0002",
+        "isAssigned": 1,
+        "createdAt": "2025-10-16T18:11:41.000Z",
+        "updatedAt": "2025-10-16T18:11:41.000Z",
+        "productId": 2,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 22,
+        "keyValue": "PHOTOSHOP-2024-KEY-0003",
+        "isAssigned": 0,
+        "createdAt": "2025-10-16T18:14:46.000Z",
+        "updatedAt": "2025-10-16T18:14:46.000Z",
+        "productId": 2,
+        "assignedToOrderId": null
+      },
+      {
+        "id": 23,
+        "keyValue": "ZZZZZ-ZZZZZ-ZZZZZ-ZZZZZ-ZZZZZ",
+        "isAssigned": 1,
+        "createdAt": "2025-10-17T17:31:40.000Z",
+        "updatedAt": "2025-10-17T17:31:40.000Z",
+        "productId": 1,
+        "assignedToOrderId": null
+      }
+    ]
+  }
+}

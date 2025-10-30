@@ -113,16 +113,42 @@ router.post(
       const { keys = [] } = req.body;
       const p = await Product.findByPk(id);
       if (!p) return res.status(404).json({ error: "Product not found" });
-      const created = [];
+      
+      const processed = [];
       for (const k of keys) {
-        const dk = await DigitalKey.create({
-          keyValue: k,
-          productId: p.id,
-          isAssigned: false,
+        const trimmedKey = k.trim();
+        // Try to find existing key first
+        let digitalKey = await DigitalKey.findOne({ 
+          where: { keyValue: trimmedKey }
         });
-        created.push(dk);
+        
+        if (digitalKey) {
+          // Update existing key if it exists
+          if (!digitalKey.productId) {
+            digitalKey.productId = p.id;
+          }
+          await digitalKey.save();
+          processed.push({ action: 'updated', key: digitalKey });
+        } else {
+          // Create new key if not found
+          const dk = await DigitalKey.create({
+            keyValue: trimmedKey,
+            productId: p.id,
+            isAssigned: false,
+          });
+          processed.push({ action: 'created', key: dk });
+        }
       }
-      res.json({ message: "Keys added", keys: created });
+      
+      res.json({ 
+        message: "Keys processed successfully", 
+        processed: processed,
+        summary: {
+          created: processed.filter(p => p.action === 'created').length,
+          updated: processed.filter(p => p.action === 'updated').length,
+          total: processed.length
+        }
+      });
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: "Server error" });

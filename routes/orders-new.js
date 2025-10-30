@@ -67,7 +67,10 @@ router.post(
         return res.status(400).json({ error: "Key does not belong to this order" });
       }
 
-      await keyToRemove.destroy();
+      // Release key back to available pool instead of destroying it
+      keyToRemove.isAssigned = false;
+      keyToRemove.assignedToOrderId = null;
+      await keyToRemove.save();
 
       // Return updated order with all relationships for immediate UI update
       const updatedOrder = await Order.findByPk(id, {
