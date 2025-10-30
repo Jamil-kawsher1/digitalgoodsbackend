@@ -318,4 +318,31 @@ router.post("/reset-password", async (req, res) => {
   }
 });
 
+/** Get current user info */
+router.get("/me", async (req, res) => {
+  try {
+    const auth = req.headers.authorization;
+    if (!auth) return res.status(401).json({ error: "No token" });
+    
+    const parts = auth.split(" ");
+    if (parts.length !== 2) return res.status(401).json({ error: "Invalid auth format" });
+    const [type, token] = parts;
+    if (type !== "Bearer") return res.status(401).json({ error: "Bad format" });
+
+    const payload = jwt.verify(token, SECRET);
+    const user = await User.findByPk(payload.id);
+    if (!user) return res.status(401).json({ error: "User not found" });
+
+    res.json({
+      id: user.id,
+      email: user.email,
+      role: user.role,
+      name: user.name,
+      emailConfirmed: user.emailConfirmed,
+    });
+  } catch (err) {
+    res.status(401).json({ error: "Invalid token", details: err.message });
+  }
+});
+
 module.exports = router;

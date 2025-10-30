@@ -4,8 +4,9 @@ const User = require("./User");
 const Product = require("./Product");
 const Order = require("./Order");
 const DigitalKey = require("./DigitalKey");
+const SystemConfig = require("./SystemConfig");
 
-const models = { User, Product, Order, DigitalKey };
+const models = { User, Product, Order, DigitalKey, SystemConfig };
 
 // Define associations
 const setupAssociations = () => {
@@ -23,6 +24,9 @@ const setupAssociations = () => {
 
   Order.hasMany(DigitalKey, { foreignKey: "assignedToOrderId", as: "keys" });
   DigitalKey.belongsTo(Order, { foreignKey: "assignedToOrderId", as: "order" });
+
+  // SystemConfig associations (if needed)
+  SystemConfig.belongsTo(User, { foreignKey: "updatedBy", as: "updater" });
 };
 
 setupAssociations();

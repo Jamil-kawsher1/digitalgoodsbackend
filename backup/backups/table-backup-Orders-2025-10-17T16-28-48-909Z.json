@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "id": "2025-10-17T16-28-48-909Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "createdAt": "2025-10-17T16:28:48.910Z",
+    "database": "goods",
+    "version": "1.0"
+  },
+  "data": {
+    "Orders": [
+      {
+        "id": 36,
+        "status": "pending",
+        "paymentMethod": null,
+        "transactionId": null,
+        "paymentSender": null,
+        "createdAt": "2025-10-17T16:19:30.000Z",
+        "updatedAt": "2025-10-17T16:19:30.000Z",
+        "userId": 8,
+        "productId": 2
+      }
+    ]
+  }
+}

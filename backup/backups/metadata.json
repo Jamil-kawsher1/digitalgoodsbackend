@@ -1,0 +1,154 @@
+[
+  {
+    "id": "2025-10-17T15-20-16-992Z",
+    "type": "full",
+    "filename": "full-backup-2025-10-17T15-20-16-992Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\full-backup-2025-10-17T15-20-16-992Z.json",
+    "size": "24.70",
+    "compressed": false,
+    "createdAt": "2025-10-17T15:20:17.006Z",
+    "database": "goods",
+    "tables": [
+      "Users",
+      "Products",
+      "Orders",
+      "DigitalKeys"
+    ]
+  },
+  {
+    "id": "2025-10-17T15-20-19-967Z",
+    "type": "full",
+    "filename": "full-backup-2025-10-17T15-20-19-967Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\full-backup-2025-10-17T15-20-19-967Z.json",
+    "size": "24.70",
+    "compressed": false,
+    "createdAt": "2025-10-17T15:20:19.994Z",
+    "database": "goods",
+    "tables": [
+      "Users",
+      "Products",
+      "Orders",
+      "DigitalKeys"
+    ]
+  },
+  {
+    "id": "2025-10-17T15-24-13-439Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-17T15-24-13-439Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-17T15-24-13-439Z.json",
+    "size": "9.54",
+    "compressed": false,
+    "createdAt": "2025-10-17T15:24:13.444Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-17T15-24-28-112Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-17T15-24-28-112Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-17T15-24-28-112Z.json",
+    "size": "9.54",
+    "compressed": false,
+    "createdAt": "2025-10-17T15:24:28.120Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-17T15-27-39-810Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-17T15-27-39-810Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-17T15-27-39-810Z.json",
+    "size": "9.54",
+    "compressed": false,
+    "createdAt": "2025-10-17T15:27:39.818Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-17T15-38-04-520Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-17T15-38-04-520Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-17T15-38-04-520Z.json",
+    "size": "0.24",
+    "compressed": false,
+    "createdAt": "2025-10-17T15:38:04.525Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-17T15-40-07-694Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-17T15-40-07-694Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-17T15-40-07-694Z.json",
+    "size": "0.24",
+    "compressed": false,
+    "createdAt": "2025-10-17T15:40:07.698Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-17T16-28-48-909Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-17T16-28-48-909Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-17T16-28-48-909Z.json",
+    "size": "0.54",
+    "compressed": false,
+    "createdAt": "2025-10-17T16:28:48.916Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-17T16-30-55-247Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-17T16-30-55-247Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-17T16-30-55-247Z.json",
+    "size": "0.58",
+    "compressed": false,
+    "createdAt": "2025-10-17T16:30:55.314Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-18T11-33-34-005Z",
+    "type": "table",
+    "tables": [
+      "Orders"
+    ],
+    "filename": "table-backup-Orders-2025-10-18T11-33-34-005Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\table-backup-Orders-2025-10-18T11-33-34-005Z.json",
+    "size": "2.11",
+    "compressed": false,
+    "createdAt": "2025-10-18T11:33:34.010Z",
+    "database": "goods"
+  },
+  {
+    "id": "2025-10-29T15-25-05-042Z",
+    "type": "full",
+    "filename": "full-backup-2025-10-29T15-25-05-042Z.json",
+    "filepath": "D:\\Easy Buy BD\\digitalgoodsbackend\\backup\\backups\\full-backup-2025-10-29T15-25-05-042Z.json",
+    "size": "24.81",
+    "compressed": false,
+    "createdAt": "2025-10-29T15:25:05.056Z",
+    "database": "goods",
+    "tables": [
+      "Users",
+      "Products",
+      "Orders",
+      "DigitalKeys"
+    ]
+  }
+]

@@ -8,6 +8,7 @@ const User = require("./models/User");
 const Product = require("./models/Product");
 const Order = require("./models/Order");
 const DigitalKey = require("./models/DigitalKey");
+const SystemConfig = require("./models/SystemConfig");
 
 // Import routes
 const authRoutes = require("./routes/auth");
@@ -15,6 +16,7 @@ const productRoutes = require("./routes/products");
 const orderRoutes = require("./routes/orders");
 const userRoutes = require("./routes/users");
 const keyRoutes = require("./routes/keys");
+const backupRoutes = require("./backup/routes/backupRoutes");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -33,11 +35,22 @@ app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
 app.use("/users", userRoutes);
 app.use("/keys", keyRoutes);
+app.use("/backup", backupRoutes);
 
 // Sync database and start server
-sequelize.sync({ alter: true })
+// Sync tables in specific order to handle foreign key constraints
+sequelize.sync({ force: false, alter: false })
   .then(async () => {
     console.log("Database synced");
+    
+    // Initialize default system configurations
+    try {
+      await SystemConfig.initializeDefaultConfigs();
+      console.log("System configurations initialized");
+    } catch (error) {
+      console.error("Error initializing system configs:", error.message);
+    }
+    
     const bcrypt = require("bcrypt");
     const adminEmail = "admin@site.test";
     
