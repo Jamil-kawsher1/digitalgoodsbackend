@@ -4,11 +4,7 @@ const cors = require("cors");
 const sequelize = require("./config/db");
 
 // Import models after sequelize initialization
-const User = require("./models/User");
-const Product = require("./models/Product");
-const Order = require("./models/Order");
-const DigitalKey = require("./models/DigitalKey");
-const SystemConfig = require("./models/SystemConfig");
+const { User, Product, Order, DigitalKey, SystemConfig, Permission, Refund, PromoCode } = require("./models");
 
 // Import routes
 const authRoutes = require("./routes/auth");
@@ -17,9 +13,10 @@ const orderRoutes = require("./routes/orders");
 const userRoutes = require("./routes/users");
 const keyRoutes = require("./routes/keys");
 const backupRoutes = require("./backup/routes/backupRoutes");
+const promoCodeRoutes = require("./routes/promoCodes");
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4002;
 
 app.use(cors());
 app.use(express.json());
@@ -36,6 +33,7 @@ app.use("/orders", orderRoutes);
 app.use("/users", userRoutes);
 app.use("/keys", keyRoutes);
 app.use("/backup", backupRoutes);
+app.use("/promo-codes", promoCodeRoutes);
 
 // Sync database and start server
 // Sync tables in specific order to handle foreign key constraints

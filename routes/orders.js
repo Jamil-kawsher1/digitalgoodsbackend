@@ -1,6 +1,6 @@
 const express = require("express");
 const { Order, Product, DigitalKey, User, SystemConfig, sequelize } = require("../models");
-const { authRequired, requireRole } = require("../middleware/auth");
+const { authRequired, requireRole } = require("../middleware/roleAuth");
 const autoAssignmentService = require("../services/autoAssignmentService");
 
 const router = express.Router();
@@ -28,7 +28,7 @@ router.post("/", authRequired, async (req, res) => {
 // List orders (admin -> all, user -> own)
 router.get("/", authRequired, async (req, res) => {
   try {
-    if (req.user.role === "admin") {
+    if (req.user.role === "admin" || req.user.role === "super_admin") {
       const all = await Order.findAll({
         include: [
           { model: Product, as: "product" },
@@ -107,7 +107,7 @@ router.post("/:id/payment", authRequired, async (req, res) => {
 router.post(
   "/:id/confirm-payment",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { id } = req.params;
@@ -152,7 +152,7 @@ router.post(
 router.post(
   "/:id/mark-paid",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { id } = req.params;
@@ -212,7 +212,7 @@ router.post(
 router.post(
   "/:id/assign-keys",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { id } = req.params;
@@ -270,7 +270,7 @@ router.post(
 router.post(
   "/:id/status",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { id } = req.params;
@@ -319,7 +319,7 @@ router.post(
 router.post(
   "/:id/keys/:keyId/remove",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { id, keyId } = req.params;
@@ -373,7 +373,7 @@ router.post(
 router.get(
   "/keys",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const keys = await DigitalKey.findAll({
@@ -394,7 +394,7 @@ router.get(
 router.get(
   "/auto-assignment/status",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const status = autoAssignmentService.isEnabledStatus();
@@ -413,7 +413,7 @@ router.get(
 router.post(
   "/auto-assignment/toggle",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { enabled } = req.body;
@@ -436,7 +436,7 @@ router.post(
 router.get(
   "/auto-assignment/config",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const configs = await SystemConfig.getAllConfigs('auto_assignment');
@@ -451,7 +451,7 @@ router.get(
 router.post(
   "/auto-assignment/config/:key",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { key: configKey } = req.params;
@@ -474,7 +474,7 @@ router.post(
 router.post(
   "/auto-assignment/process/:orderId",
   authRequired,
-  requireRole("admin"),
+  requireRole(['admin', 'super_admin']),
   async (req, res) => {
     try {
       const { orderId } = req.params;
