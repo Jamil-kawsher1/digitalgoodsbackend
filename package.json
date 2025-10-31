@@ -8,13 +8,17 @@
     "migrate": "node migrate.js",
     "seed": "node seeders/index.js",
     "setup": "npm run migrate && npm run seed",
-    "setup:dev": "npm run migrate && npm run seed && npm run dev"
+    "setup:dev": "npm run migrate && npm run seed && npm run dev",
+    "fix:role-enum": "node scripts/fix-cpanel-role-enum.js",
+    "fix:cpanel": "npm run fix:role-enum && npm run seed"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-validator": "^7.3.0",
     "jsonwebtoken": "^9.0.0",
     "mysql2": "^3.9.1",
     "nodemailer": "^7.0.6",

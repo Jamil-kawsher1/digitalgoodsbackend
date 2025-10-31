@@ -84,7 +84,7 @@ router.post("/register", async (req, res) => {
       name: name ?? null,
       email,
       passwordHash: hash,
-      role: "customer",
+      role: "user",
     };
 
     if (confirmationRequired || confirmationEnabled) {
@@ -342,6 +342,55 @@ router.get("/me", async (req, res) => {
     });
   } catch (err) {
     res.status(401).json({ error: "Invalid token", details: err.message });
+  }
+});
+
+/** Change password endpoint */
+router.put("/change-password", async (req, res) => {
+  try {
+    const auth = req.headers.authorization;
+    if (!auth) return res.status(401).json({ error: "No token" });
+    
+    const parts = auth.split(" ");
+    if (parts.length !== 2) return res.status(401).json({ error: "Invalid auth format" });
+    const [type, token] = parts;
+    if (type !== "Bearer") return res.status(401).json({ error: "Bad format" });
+
+    const payload = jwt.verify(token, SECRET);
+    const user = await User.findByPk(payload.id);
+    if (!user) return res.status(401).json({ error: "User not found" });
+
+    const { currentPassword, newPassword } = req.body;
+
+    // Validation
+    if (!currentPassword || !newPassword) {
+      return res.status(400).json({ error: "Current password and new password are required" });
+    }
+
+    if (newPassword.length < 8) {
+      return res.status(400).json({ error: "New password must be at least 8 characters long" });
+    }
+
+    // Verify current password
+    const currentPasswordValid = await bcrypt.compare(currentPassword, user.passwordHash);
+    if (!currentPasswordValid) {
+      return res.status(400).json({ error: "Current password is incorrect" });
+    }
+
+    // Hash new password
+    const newPasswordHash = await bcrypt.hash(newPassword, 10);
+
+    // Update password
+    await user.update({ passwordHash: newPasswordHash });
+
+    // Log the password change for audit
+    console.log(`Password changed for user ${user.email} at ${new Date().toISOString()}`);
+
+    res.json({ success: true, message: "Password changed successfully" });
+
+  } catch (err) {
+    console.error("Password change error:", err);
+    res.status(500).json({ error: "Server error" });
   }
 });
 

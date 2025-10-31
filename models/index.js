@@ -5,8 +5,13 @@ const Product = require("./Product");
 const Order = require("./Order");
 const DigitalKey = require("./DigitalKey");
 const SystemConfig = require("./SystemConfig");
+const Permission = require("./Permission");
+const Refund = require("./Refund");
+const PromoCodeInit = require("./PromoCode");
 
-const models = { User, Product, Order, DigitalKey, SystemConfig };
+const PromoCode = PromoCodeInit(sequelize);
+
+const models = { User, Product, Order, DigitalKey, SystemConfig, Permission, Refund, PromoCode };
 
 // Define associations
 const setupAssociations = () => {
@@ -27,6 +32,16 @@ const setupAssociations = () => {
 
   // SystemConfig associations (if needed)
   SystemConfig.belongsTo(User, { foreignKey: "updatedBy", as: "updater" });
+
+  // Refund associations
+  Refund.belongsTo(User, { foreignKey: "userId", as: "user" });
+  Refund.belongsTo(Order, { foreignKey: "orderId", as: "order" });
+  User.hasMany(Refund, { foreignKey: "userId", as: "refunds" });
+  Order.hasMany(Refund, { foreignKey: "orderId", as: "refunds" });
+
+  // PromoCode associations
+  PromoCode.belongsTo(User, { foreignKey: "createdBy", as: "creator" });
+  User.hasMany(PromoCode, { foreignKey: "createdBy", as: "promoCodes" });
 };
 
 setupAssociations();
